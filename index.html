@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0b1324"><title>ScamShield — Scam & Phishing Protection</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><div class="brand-mark">N<span>盾</span></div><div><b>ScamShield</b><small>YOUR DIGITAL SAFETY COMPANION</small></div></div>
+ <div class="side-label">WORKSPACE</div>
+ <nav class="nav">
+  <button class="nav-link active" data-page="dashboard"><span>▦</span> Overview</button>
+  <button class="nav-link" data-page="scanner"><span>⌕</span> Threat Scanner</button>
+  <button class="nav-link" data-page="history"><span>◷</span> Scan History</button>
+  <button class="nav-link" data-page="education"><span>▤</span> Security Academy</button>
+  <button class="nav-link" data-page="settings"><span>⚙</span> Settings</button>
+ </nav>
+ <div class="sidebar-bottom"><div class="secure-card"><div class="secure-icon">✓</div><b>Stay one step ahead</b><p>Think before you click. Stay protected online.</p></div><div class="profile"><div class="avatar">NS</div><div><b>Guest User</b><small>Personal workspace</small></div><span class="online-dot"></span></div></div>
+</aside>
+<main class="main">
+ <header class="topbar"><button class="mobile-menu" id="menuBtn">☰</button><div class="breadcrumb">Workspace <span>/</span> <b id="crumb">Overview</b></div><div class="top-actions"><span class="status"><i></i> Protection active</span><button class="theme-toggle" id="themeBtn" title="Toggle theme">☼</button></div></header>
+ <div class="content">
+ <section class="page active" id="dashboard">
+  <div class="welcome-row"><div><div class="eyebrow">SATURDAY, OCTOBER 31, 2026</div><h1>Your digital world,<br><em>safer than ever.</em></h1><p class="muted">Detect suspicious messages and links before they become a threat.</p></div><div class="hero-shield"><div class="shield-ring">✓</div><span class="orbit o1"></span><span class="orbit o2"></span></div></div>
+  <div class="stats-grid">
+   <article class="stat-card"><div class="stat-top"><span>Total scans</span><span class="stat-icon blue">⌕</span></div><strong id="totalScans">0</strong><small>Analyses performed on this device</small></article>
+   <article class="stat-card"><div class="stat-top"><span>Safe results</span><span class="stat-icon green">✓</span></div><strong id="safeScans">0</strong><small>Items with no obvious warning signs</small></article>
+   <article class="stat-card"><div class="stat-top"><span>Threats flagged</span><span class="stat-icon red">!</span></div><strong id="threatScans">0</strong><small>Potentially suspicious items found</small></article>
+  </div>
+  <div class="section-heading"><div><h2>Quick scan</h2><p class="muted">Choose what you want to check.</p></div><span class="live-label"><i></i> LOCAL ANALYSIS</span></div>
+  <div class="scan-panel">
+   <div class="scan-tabs"><button class="scan-tab selected" data-mode="message">▤ &nbsp; Message</button><button class="scan-tab" data-mode="url">◎ &nbsp; Website URL</button></div>
+   <textarea id="scanInput" placeholder="Paste a suspicious SMS, email, WhatsApp message or any text here..." rows="5"></textarea>
+   <div class="scan-footer"><span>⌁ &nbsp; Your text stays in this browser.</span><button class="primary-btn" id="scanBtn">Analyze now <b>→</b></button></div>
+   <div id="scanResult" class="result-wrap hidden"></div>
+  </div>
+  <div class="bottom-grid"><article class="panel"><div class="panel-head"><div><h2>Recent activity</h2><p class="muted">Your latest security checks</p></div><button class="text-btn" data-goto="history">View all →</button></div><div id="recentList" class="recent-list"><div class="empty">No scans yet. Your activity will appear here.</div></div></article>
+  <article class="panel tip-highlight"><div class="tip-icon">✦</div><div class="eyebrow">SECURITY TIP OF THE DAY</div><h3>Pause before you tap.</h3><p>Scammers create urgency to make you act without thinking. Verify unexpected requests through an official channel.</p><button class="text-btn" data-goto="education">Explore safety tips →</button></article></div>
+ </section>
+ <section class="page" id="scanner"><div class="page-heading"><div class="eyebrow">PROTECT YOURSELF</div><h1>Threat scanner</h1><p class="muted">Inspect suspicious messages and website addresses for common warning signs.</p></div><div class="scan-panel large"><div class="scan-tabs"><button class="scan-tab selected" data-mode="message">▤ &nbsp; Message analysis</button><button class="scan-tab" data-mode="url">◎ &nbsp; URL analysis</button></div><label for="scanInput2">CONTENT TO ANALYZE</label><textarea id="scanInput2" rows="7" placeholder="Paste the message or URL you want to check..."></textarea><div class="scan-footer"><span>🔒 &nbsp; Analysis runs locally in your browser</span><button class="primary-btn" id="scanBtn2">Run security check →</button></div><div id="scanResult2" class="result-wrap hidden"></div></div><div class="notice"><b>Important:</b> This browser-only demo uses pattern-based checks. It cannot confirm whether a website is malicious or replace a trusted security service.</div></section>
+ <section class="page" id="history"><div class="page-heading row-between"><div><div class="eyebrow">YOUR ACTIVITY</div><h1>Scan history</h1><p class="muted">Review results saved on this device.</p></div><button class="outline-btn" id="clearHistory">Clear history</button></div><div class="filter-row" id="historyFilters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="Safe">Safe</button><button class="filter" data-filter="Scam Detected">Scams</button><button class="filter" data-filter="Phishing Detected">Phishing</button></div><div id="historyList" class="history-list"></div></section>
+ <section class="page" id="education"><div class="page-heading"><div class="eyebrow">KNOW THE SIGNS</div><h1>Security academy</h1><p class="muted">Simple habits that make a big difference to your online safety.</p></div><div class="filter-row" id="eduFilters"><button class="filter active" data-filter="all">All topics</button><button class="filter" data-filter="phishing">Phishing</button><button class="filter" data-filter="scam">Scams</button><button class="filter" data-filter="general">General safety</button></div><div class="education-grid" id="tipsGrid"></div></section>
+ <section class="page" id="settings"><div class="page-heading"><div class="eyebrow">PREFERENCES</div><h1>Settings</h1><p class="muted">Manage the look and feel of your workspace.</p></div><div class="settings-panel"><h3>Appearance</h3><div class="setting-row"><div><b>Dark appearance</b><p class="muted">Switch between dark and light themes.</p></div><label class="switch"><input type="checkbox" id="darkSwitch"><span></span></label></div><h3>Privacy & data</h3><div class="setting-row"><div><b>Local scan history</b><p class="muted">Your scan results are stored in this browser only.</p></div><span class="pill green-pill">On device</span></div><div class="setting-row"><div><b>Clear all saved data</b><p class="muted">Delete your scan history from this browser.</p></div><button class="outline-btn danger-btn" id="clearData">Clear data</button></div><h3>About ScamShield</h3><p class="muted about">A browser-based demonstration inspired by the ScamShield scam and phishing awareness project. Built using HTML, CSS and vanilla JavaScript only.</p></div></section>
+ <footer>© 2026 ScamShield <span>Built for a safer digital community.</span></footer>
+ </div></main></div><div id="toast" class="toast"></div><script src="script.js"></script></body></html>
